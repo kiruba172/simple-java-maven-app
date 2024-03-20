@@ -1,21 +1,10 @@
-pipeline {
-    agent any
-    
-    stages {
-        stage('Build') {
-            steps {
-               echo "build"
-            }
-        }
-        stage('Test') {
-            steps {
-               echo "test"
-            }
-        }
-        stage('Deliver') {
-            steps {
-               echo "deliver"
-            }
-        }
+pipeline{
+    agent {
+      label 'localnode'
+    }
+    stages{
+        stage('Build Package') {
+            sh 'mvn clean package'
+        }   
     }
 }
