@@ -35,23 +35,24 @@ pipeline{
 
         }
 
-        stages('TEST') {
-            stage('Test A') {
-                steps {
-                    echo "hi test a"
+        stage('TEST') {
+            parallel {
+                stage('Test A') {
+                    steps {
+                        echo "hi test a"
+                    }
+
+                    steps{
+                        echo "bye test a"
+                    }
                 }
 
-                steps{
-                    echo "bye test a"
+                stage('Test B') {
+                    steps {
+                        echo "helo test b"
+                     }
                 }
-            }
-
-            stage('Test B') {
-                steps {
-                    echo "helo test b"
-                }
-            }
-              
+            }   
         }
     }
 }
