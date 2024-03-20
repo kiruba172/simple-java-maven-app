@@ -34,10 +34,6 @@ pipeline{
                     steps {
                         echo "hi test a"
                     }
-
-                    steps{
-                        echo "bye test a"
-                    }
                 }
 
                 stage('Test B') {
@@ -45,13 +41,14 @@ pipeline{
                         echo "helo test b"
                      }
                 }
+            }    
 
-                post {
-                    success {
-                        archiveArtifacts artifacts: '**/target/*.jar'
-                    }
-                }   
+            post {
+                success {
+                    archiveArtifacts artifacts: '**/target/*.jar'
+                }
             }   
+   
         }
     }
 }
