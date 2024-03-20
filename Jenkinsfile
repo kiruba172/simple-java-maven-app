@@ -17,7 +17,7 @@ pipeline{
 
             post {
                success {
-                   archiveArtifacts artifacts: '**/target/*.war'
+                   archiveArtifacts artifacts: '/home/kirubadharshini/jenkins/workspace/1stpipeline/target/*.war'
                 }
             } 
 
