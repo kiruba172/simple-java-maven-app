@@ -26,13 +26,6 @@ pipeline{
                 echo "hello $name ${params.lastname}"
                 echo "${params.choice}"
             } 
-     
-            post {
-               success {
-                   archiveArtifacts artifacts: '**/target/*.jar'
-                }
-            } 
-
         }
 
         stage('TEST') {
@@ -52,6 +45,12 @@ pipeline{
                         echo "helo test b"
                      }
                 }
+
+                post {
+                    success {
+                        archiveArtifacts artifacts: '**/target/*.jar'
+                    }
+                }   
             }   
         }
     }
