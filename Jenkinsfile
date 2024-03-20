@@ -35,7 +35,7 @@ pipeline{
 
         }
 
-        stage('TEST') {
+        stages('TEST') {
             stage('Test A') {
                 steps {
                     echo "hi test a"
