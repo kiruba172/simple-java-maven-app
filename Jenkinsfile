@@ -34,6 +34,25 @@ pipeline{
             } 
 
         }
+
+        stage('TEST') {
+            stage('Test A') {
+                steps {
+                    echo "hi test a"
+                }
+
+                steps{
+                    echo "bye test a"
+                }
+            }
+
+            stage('Test B') {
+                steps {
+                    echo "helo test b"
+                }
+            }
+              
+        }
     }
 }
         
